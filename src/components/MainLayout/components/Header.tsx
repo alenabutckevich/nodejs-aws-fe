@@ -9,6 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Cart from "components/MainLayout/components/Cart";
 import {Link} from 'react-router-dom';
+import PetsIcon from '@material-ui/icons/Pets';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     homeLink: {
       color: 'white',
-      textDecoration: 'none'
+      textDecoration: 'none',
+      paddingRight: '5px',
     }
   }),
 );
@@ -46,7 +48,10 @@ export default function Header() {
     <AppBar position="relative">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          <Link className={classes.homeLink} to="/">My Store!</Link>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Link className={classes.homeLink} to="/">Pet Shop</Link>
+            <PetsIcon fontSize="small" />
+          </div>
         </Typography>
 
         {auth && (
